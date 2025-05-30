@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Number Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Number Operations</h1>
+
+  <label>Enter a number:</label>
+  <input type="number" id="inputNumber" step="any" placeholder="Enter number" />
+  <br/>
+
+  <button onclick="performOperations()">Perform Operations</button>
+
+  <h2>Results:</h2>
+  <p><strong>Exponential Value:</strong> <span id="expValue"></span></p>
+  <p><strong>Limited Decimal (2 digits):</strong> <span id="limitedDecimal"></span></p>
+  <p><strong>Converted to String:</strong> <span id="stringValue"></span></p>
+  <p><strong>Negative Infinity:</strong> <span id="negInfinity"></span></p>
+
+  <script>
+    function performOperations() {
+      const num = parseFloat(document.getElementById("inputNumber").value);
+
+      // Exponential value
+      const exponential = num.toExponential();
+
+      // Limit to 2 digits after decimal
+      const fixedDecimal = num.toFixed(2);
+
+      // Convert to string
+      const stringValue = num.toString();
+
+      // Negative Infinity using Number object
+      const negativeInfinity = Number.NEGATIVE_INFINITY;
+
+      // Display results
+      document.getElementById("expValue").textContent = exponential;
+      document.getElementById("limitedDecimal").textContent = fixedDecimal;
+      document.getElementById("stringValue").textContent = stringValue;
+      document.getElementById("negInfinity").textContent = negativeInfinity;
+    }
+  </script>
+</body>
+</html>

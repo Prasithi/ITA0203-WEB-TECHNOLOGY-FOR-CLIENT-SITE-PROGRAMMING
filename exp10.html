@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background GIF with CSS Effects</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      background: url('your-animation.gif') no-repeat center center;
+      background-size: cover; /* Or use 'contain' to maintain aspect ratio */
+      opacity: 0.8; /* Transparency: 0 (invisible) to 1 (fully visible) */
+      transition: all 2s ease-in-out; /* Smooth transition for effects */
+      z-index: -1; /* Ensure background stays behind content */
+    }
+
+    .background-gif:hover {
+      opacity: 0.5; /* Change opacity on hover */
+      background-size: 110%; /* Slight zoom effect on hover */
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-gif"></div>
+
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This page has a background GIF with CSS effects like size, opacity, and transition.</p>
+  </div>
+</body>
+</html>
